@@ -1,5 +1,5 @@
 {
-  "name": "nodered-mm-ws",
+  "name": "node-red-contrib-mattermost-ws",
   "version": "1.0.0",
   "description": "",
   "main": "mm-ws.js",
