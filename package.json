@@ -11,6 +11,18 @@
     "mattermost",
     "websocket"
   ],
-  "author": "",
-  "license": "ISC"
+  "node-red": {
+    "nodes": {
+      "mm-ws": "mm-ws.js"
+    }
+  },
+  "author": "Arsen Sirekanyan",
+  "license": "ISC",
+  "devDependencies": {
+    "node-red-node-test-helper": "^0.2.7"
+  },
+  "dependencies": {
+    "mattermost-redux": "^5.33.1",
+    "ws": "^8.5.0"
+  }
 }
