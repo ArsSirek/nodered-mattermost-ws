@@ -6,12 +6,26 @@
 			name: {value:""},
 			pat: {value:""},
 			host: {value:""},
+			events: {value:"posted"},
 		},
 		inputs:0,
 		outputs:1,
-		icon: "icon.jpg",
+		icon: "./icon.jpg",
 		label: function() {
 			return this.name||"mm-ws";
+		},
+		oneditprepare: function() {
+			$("#node-input-events").typedInput({
+				types: [
+					{
+						value: "events",
+						options: [
+							{ value: "posted", label: "Posts Only"},
+							{ value: "all", label: "All"},
+						]
+					}
+				]
+			});
 		}
 	});
 </script>
@@ -28,6 +42,10 @@
     <div class="form-row">
         <label for="node-input-host"><i class="fa fa-tag"></i> Host</label>
         <input type="text" id="node-input-host" placeholder="Mattermost host without http and path">
+    </div>
+    <div class="form-row">
+        <label for="node-input-events"><i class="fa fa-tag"></i> Events</label>
+        <input type="text" id="node-input-events" placeholder="Event Types">
     </div>
 </script>
 
