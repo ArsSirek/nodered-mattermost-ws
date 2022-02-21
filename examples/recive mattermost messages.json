@@ -1,0 +1,40 @@
+[
+  {
+    "id": "c70ea7080cd9aaa1",
+    "type": "mm-ws-listen",
+    "z": "f6f2187d.f17ca8",
+    "name": "Mattermost",
+    "host": "525c3d18310d1390",
+    "x": 420,
+    "y": 520,
+    "wires": [
+      [
+        "163bb4ee734d9e6d"
+      ]
+    ]
+  },
+  {
+    "id": "163bb4ee734d9e6d",
+    "type": "debug",
+    "z": "f6f2187d.f17ca8",
+    "name": "",
+    "active": false,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "false",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 650,
+    "y": 520,
+    "wires": []
+  },
+  {
+    "id": "525c3d18310d1390",
+    "type": "mm-ws-config",
+    "name": "mattermost connection",
+    "host": "mattermost.com",
+    "httpPort": "443",
+    "wssPort": "443"
+  }
+]

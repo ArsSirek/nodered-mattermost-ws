@@ -1,0 +1,36 @@
+[
+  {
+    "id": "34946fe1239f226d",
+    "type": "http in",
+    "z": "f6f2187d.f17ca8",
+    "name": "",
+    "url": "/mattermost",
+    "method": "get",
+    "upload": false,
+    "swaggerDoc": "",
+    "x": 400,
+    "y": 440,
+    "wires": [
+      [
+        "897430640990d9b2"
+      ]
+    ]
+  },
+  {
+    "id": "897430640990d9b2",
+    "type": "debug",
+    "z": "f6f2187d.f17ca8",
+    "name": "",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 610,
+    "y": 440,
+    "wires": []
+  }
+]

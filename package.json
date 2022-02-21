@@ -2,9 +2,16 @@
   "name": "node-red-contrib-mm-ws",
   "version": "1.0.2",
   "description": "",
-  "main": "mm-ws.js",
+  "main": "mm-ws-listen.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/ArsSirek/nodered-mattermost-ws/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArsSirek/nodered-mattermost-ws.git"
   },
   "keywords": [
     "node-red",
@@ -12,8 +19,11 @@
     "websocket"
   ],
   "node-red": {
+    "version": ">=2.0.0",
     "nodes": {
-      "mm-ws": "mm-ws.js"
+      "mm-ws-config": "mm-ws-config.js",
+      "mm-ws-send": "mm-ws-send.js",
+      "mm-ws-listen": "mm-ws-listen.js"
     }
   },
   "author": "Arsen Sirekanyan",
@@ -23,6 +33,10 @@
   },
   "dependencies": {
     "mattermost-redux": "^5.33.1",
+    "node-fetch": "^2.6.1",
     "ws": "^8.5.0"
+  },
+  "engines": {
+    "node": ">=12.0.0"
   }
 }

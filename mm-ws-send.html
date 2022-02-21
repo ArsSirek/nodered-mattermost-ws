@@ -1,0 +1,48 @@
+<script type="text/javascript">
+	RED.nodes.registerType('mm-ws-send', {
+		category: "mattermost",
+		defaults: {
+			name: {value: "Send to MM"},
+			host: {value: "", type: "mm-ws-config"},
+			channel_id: {value: "channel_id", required: true},
+			message: {value: "message", required: true},
+			attachments: {value: "attachments", required: false},
+		},
+		inputs: 1,
+		outputs: 0,
+		icon: "white-globe.png",
+		color: "#a6bbcf",
+		label: function () {
+			return (this.name || "mm-ws-send")
+		}
+	});
+</script>
+
+<script type="text/html" data-template-name="mm-ws-send">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name"/>
+    </div>
+    <div class="form-row">
+        <label for="node-input-host"><i class="icon-bookmark"></i> Host</label>
+        <input type="text" id="node-input-host"/>
+    </div>
+    <div class="form-row">
+        <label for="node-input-channel_id"><i class="icon-bookmark"></i> Channel Id Field Name</label>
+        <input type="text" id="node-input-channel_id"/>
+    </div>
+    <div class="form-row">
+        <label for="node-input-message"><i class="icon-bookmark"></i> Message Field Name</label>
+        <input type="text" id="node-input-message"/>
+    </div>
+    <div class="form-row">
+        <label for="node-input-attachments"><i class="icon-bookmark"></i> Attachments Field Name</label>
+        <input type="text" id="node-input-attachments"/>
+    </div>
+
+</script>
+
+<script type="text/html" data-help-name="mm-ws-send">
+    <p>Sends message to mattermost websocket connection</p>
+    <p>channel_id and message fields should contain field names to look data on like msg[filedName]</p>
+</script>

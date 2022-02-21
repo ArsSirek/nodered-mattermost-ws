@@ -1,0 +1,37 @@
+
+
+<script type="text/javascript">
+	RED.nodes.registerType('mm-ws-config', {
+		category: 'config',
+		defaults: {
+			name: { value: "" },
+			host: { value: "", required: true },
+			httpPort: { value: 443, required: true },
+		},
+		credentials: {
+			pat: {value: '', required: true}
+		},
+		label: function() {
+			return this.name;
+		}
+	});
+</script>
+
+<script type="text/html"  data-template-name="mm-ws-config">
+    <div class="form-row">
+        <label for="node-config-input-name"><i class="fa fa-user"></i> Name</label>
+        <input type="text" id="node-config-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-host"><i class="fa fa-globe"></i> Domain</label>
+        <input type="text" id="node-config-input-host">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-pat"><i class="fa fa-lock"></i> Personal Access Token</label>
+        <input type="text" id="node-config-input-pat">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-httpPort"><i class="fa fa-user"></i> http Port</label>
+        <input type="text" id="node-config-input-httpPort">
+    </div>
+</script>
