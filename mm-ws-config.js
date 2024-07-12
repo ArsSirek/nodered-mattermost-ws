@@ -1,5 +1,4 @@
 Object.assign(global, { WebSocket: require('ws') });
-Object.assign(global, { fetch: require('node-fetch').default });
 
 const WebSocketClient = require('@mattermost/client').WebSocketClient;
 
@@ -22,6 +21,9 @@ module.exports = function (RED) {
 			if (!node.wsClient) {
 				const wsClient = new WebSocketClient();
 				wsClient.initialize(`wss://${config.host}/api/v4/websocket`, node.credentials.pat);
+				wsClient.addCloseListener(() => {
+					wsClient.serverSequence = 0;
+				});
 
 				node.wsClient = wsClient;
 			}
