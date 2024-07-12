@@ -1,9 +1,9 @@
 Object.assign(global, { WebSocket: require('ws') });
 Object.assign(global, { fetch: require('node-fetch').default });
 
-const wsClient = require('mattermost-redux/client/websocket_client.js').default;
+const WebSocketClient = require('@mattermost/client').WebSocketClient;
 
-const Client4 = require('mattermost-redux/client/client4.js').default;
+const Client4 = require('@mattermost/client').Client4;
 
 
 module.exports = function (RED) {
@@ -20,7 +20,8 @@ module.exports = function (RED) {
 
 		node.createClient = function () {
 			if (!node.wsClient) {
-				wsClient.initialize(node.credentials.pat, {connectionUrl: `wss://${config.host}/api/v4/websocket`});
+				const wsClient = new WebSocketClient();
+				wsClient.initialize(`wss://${config.host}/api/v4/websocket`, node.credentials.pat);
 
 				node.wsClient = wsClient;
 			}

@@ -10,6 +10,7 @@ module.exports = function(RED) {
 		}
 
 		node.host.wsClient.setEventCallback((event) => {
+			console.log('event', event);
 			switch (event.event) {
 				case 'posted': {
 					const post = JSON.parse(event.data.post);
