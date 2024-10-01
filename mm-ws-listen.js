@@ -53,6 +53,7 @@ module.exports = function(RED) {
 
         if (!node.host.wsClient) {
             try {
+                node.log("Initiating Mattermost websocket client...");
                 node.host.createClient();
                 setupWebSocketListeners();
             } catch (error) {
